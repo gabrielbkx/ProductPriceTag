@@ -15,15 +15,17 @@ public class Program {
         List<Product> list = new ArrayList<>();
         System.out.print("Enter the number of products: ");
         int n = sc.nextInt();
+        sc.nextLine();
 
         for (int i = 0; i < n; i++){
-            System.out.println("Product " + "#" + (n + 1) + "data:");
-            System.out.print("Common, used or imported (c/u/i)?");
+            System.out.println("Product " + "#" + (i + 1) + " data:");
+            System.out.println();
+            System.out.print("Common, used or imported (c/u/i)? ");
             char e = sc.next().charAt(0);
 
             if (e == 'i'){
                 System.out.print("Name: ");
-                String name = sc.nextLine();
+                String name = sc.next();
                 System.out.print("Price: ");
                 double price = sc.nextDouble();
                 System.out.print("Customs fee: ");
@@ -32,14 +34,14 @@ public class Program {
                 list.add(p);
             } else if (e == 'c') {
                 System.out.print("Name: ");
-                String name = sc.nextLine();
+                String name = sc.next();
                 System.out.print("Price: ");
                 double price = sc.nextDouble();
                 Product p = new Product(name,price);
                 list.add(p);
             }else{
                 System.out.print("Name: ");
-                String name = sc.nextLine();
+                String name = sc.next();
                 System.out.print("Price: ");
                 double price = sc.nextDouble();
                 System.out.print("Manufacture date (DD/MM/YYYY):");
@@ -48,8 +50,11 @@ public class Program {
                 list.add(p);
             }
         }
+        System.out.println();
+        System.out.println("PRICE TAGS:");
+        System.out.println();
         for (Product p : list){
-            System.out.print(p.priceTag());
+            System.out.println(p.priceTag());
         }
 
 

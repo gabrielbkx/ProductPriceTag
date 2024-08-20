@@ -1,6 +1,9 @@
 package entities;
 
+import java.text.SimpleDateFormat;
+
 public class ImportedProduct extends Product {
+
     private Double customsFee;
 
     public ImportedProduct() {
@@ -18,7 +21,8 @@ public class ImportedProduct extends Product {
     }
     @Override
     public String priceTag(){
-        return super.priceTag() + "(Customs Fee:" + customsFee + ")";
+        this.price += customsFee;
+        return super.priceTag() + " (Customs Fee: $ " + customsFee + ")";
 
 
     }
